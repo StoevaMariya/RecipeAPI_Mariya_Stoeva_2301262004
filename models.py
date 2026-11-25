@@ -75,6 +75,11 @@ class Recipe(Base):
     title: Mapped[str] = mapped_column(String(200), nullable=False)
     title_key: Mapped[str] = mapped_column(String(200), nullable=False)
     instructions: Mapped[str] = mapped_column(nullable=False)
+    difficulty: Mapped[str] = mapped_column(
+    String(6),
+    nullable=False,
+    server_default="easy"
+)
     prep_time: Mapped[int] = mapped_column(nullable=False)
     servings: Mapped[int] = mapped_column(nullable=False)
 
